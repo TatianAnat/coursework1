@@ -1,6 +1,7 @@
 import java.util.Random;
 
 public class Main {
+
     private final static Random RANDOM = new Random();
     private final static String[] NAMES = {"Савелий", "Евгений", "Фёдор", "Иван", "Егор"};
     private final static String[] SURNAMES = {"Светиков", "Иванов", "Достоевский", "Фёдоров", "Сергеев"};
@@ -66,56 +67,10 @@ public class Main {
         return (double) employeeSalaryAmount() / EMPLOYEES.length;
     }
 
-    private static void printFullNames(){
+    private static void printFullNames() {
         for (Employee employee : EMPLOYEES) {
             System.out.println(employee.getFullName());
 
-        }
-    }
-
-
-    public static class Employee {
-        private static int idСounter = 1;
-
-        private int id;
-        private String fullName;
-        private int department;
-        private int salary;
-
-        public Employee(String fullName, int department, int salary) {
-            id = idСounter++;
-            this.fullName = fullName;
-            this.department = department;
-            this.salary = salary;
-        }
-
-        public void setDepartment(int departament) {
-            this.department = departament;
-        }
-
-        public void setSalary(int salary) {
-            this.salary = salary;
-        }
-
-        public int getId() {
-            return id;
-        }
-
-        public String getFullName() {
-            return fullName;
-        }
-
-        public int getDepartment() {
-            return department;
-        }
-
-        public int getSalary() {
-            return salary;
-        }
-
-        @Override
-        public String toString() {
-            return "id" + id + ", Фамилия Имя Отчество = " + fullName + ", отдел: " + department + ", зарплата: " + salary;
         }
     }
 }
