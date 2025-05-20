@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Random;
 
 public class Main {
@@ -27,7 +28,8 @@ public class Main {
         System.out.println("Среднее значение зарплат сотрудников: " + calculatingAverageEmployeeSalary());
         printFullNames();
         indexSalaries(10);
-       // System.out.println("Индексированная зарплата сотрудников: " + indexSalaries(10));
+               // System.out.println("Индексированная зарплата сотрудников: " + indexSalaries(10));
+
 
     }
 
@@ -69,6 +71,8 @@ public class Main {
         for (Employee employee : EMPLOYEES) {
             double newSalary = employee.getSalary() * (1 + percent / 100);
             employee.setSalary((int) newSalary);
+            System.out.println(employee.getSalary());
+
         }
     }
 
