@@ -26,6 +26,8 @@ public class Main {
         System.out.println("Сотрудник с максимальной зарплатой: " + maximumWageEmployee());
         System.out.println("Среднее значение зарплат сотрудников: " + calculatingAverageEmployeeSalary());
         printFullNames();
+        indexSalaries(10);
+       // System.out.println("Индексированная зарплата сотрудников: " + indexSalaries(10));
 
     }
 
@@ -61,6 +63,13 @@ public class Main {
             }
         }
         return maximumWageEmployee;
+    }
+
+    public static void indexSalaries(double percent) {
+        for (Employee employee : EMPLOYEES) {
+            double newSalary = employee.getSalary() * (1 + percent / 100);
+            employee.setSalary((int) newSalary);
+        }
     }
 
     private static double calculatingAverageEmployeeSalary() {
