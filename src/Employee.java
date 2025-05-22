@@ -3,14 +3,17 @@ public class Employee {
 
     private final int id;
     private final String fullName;
+    public String setSalary;
     private int department;
     private int salary;
+
 
     public Employee(String fullName, int department, int salary) {
         id = idСounter++;
         this.fullName = fullName;
         this.department = department;
         this.salary = salary;
+
     }
 
     public void setDepartment(int departament) {
@@ -33,12 +36,22 @@ public class Employee {
         return department;
     }
 
-    public int[] getSalary() {
+    public int getSalary() {
         return salary;
+    }
+
+    //public int getNewSalary() {
+     //   return newSalary;
+ //   }
+
+    public String getNewSalary() {
+        return getNewSalary();
     }
 
     @Override
     public String toString() {
         return "id" + id + ", Фамилия Имя Отчество = " + fullName + ", отдел: " + department + ", зарплата: " + salary;
+
     }
 }
+
