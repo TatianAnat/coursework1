@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Arrays;
 import java.util.Random;
 
@@ -17,6 +19,7 @@ public class Main {
                     MIDDLE_NAME_PATRONYMIC[RANDOM.nextInt(0, MIDDLE_NAME_PATRONYMIC.length)] + " ";
             EMPLOYEES[i] = new Employee(fullName, RANDOM.nextInt(1, 6), RANDOM.nextInt(40_000, 150_000));
         }
+        Employee.SalaryUtils.adjustSalaries(List.of(EMPLOYEES), 10);
     }
 
     public static void main(String[] args) {
@@ -27,12 +30,7 @@ public class Main {
         System.out.println("Сотрудник с максимальной зарплатой: " + maximumWageEmployee());
         System.out.println("Среднее значение зарплат сотрудников: " + calculatingAverageEmployeeSalary());
         printFullNames();
-        indexSalaries(10);
-        for (Employee e : employee) {
-            System.out.println(e.getSalary());
-        }
 
-        // System.out.println("Индексированная зарплата сотрудников: " + indexSalaries(10));
     }
 
     private static void print() {
@@ -69,21 +67,6 @@ public class Main {
         return maximumWageEmployee;
     }
 
-   // public static void indexSalaries(double percent) {
-      //  for (Employee employee : EMPLOYEES) {
-       //     double newSalary = employee.getSalary() * (1 + percent / 100);
-        //    employee.setSalary((int) newSalary);
-        //}
-   // }
-   public class SalaryIndexer {
-       public static void indexSalaries(EMPLOYEES employees, double percent) {
-           for (Employee emp : employees) {
-               double currentSalary = emp.getSalary();
-               double increasedSalary = currentSalary * (1 + percent / 100);
-               emp.setSalary(increasedSalary);
-           }
-       }
-   }
 
     private static double calculatingAverageEmployeeSalary() {
         return (double) employeeSalaryAmount() / EMPLOYEES.length;
@@ -91,7 +74,7 @@ public class Main {
 
     private static void printFullNames() {
         for (Employee employee : EMPLOYEES) {
-            System.out.println(employee.getFullName() + employee.getNewSalary());
+            System.out.println(employee.getFullName() + employee.getSalary());
 
         }
 

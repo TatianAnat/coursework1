@@ -1,3 +1,4 @@
+import java.util.List;
 public class Employee {
     private static int idСounter = 1;
 
@@ -40,12 +41,27 @@ public class Employee {
         return salary;
     }
 
-    //public int getNewSalary() {
-     //   return newSalary;
- //   }
+    public static class SalaryUtils {
+        /**
+         * Статический метод для изменения зарплаты всех сотрудников на заданный процент
+         *
+         * @param employees список сотрудников
+         * @param percent   процент изменения (может быть как положительным, так и отрицательным)
+         */
+        public static void adjustSalaries(List<Employee> employees, double percent) {
+            if (employees == null) {
+                throw new IllegalArgumentException("Список сотрудников не может быть null");
+            }
 
-    public String getNewSalary() {
-        return getNewSalary();
+            double multiplier = 1 + percent / 100.0;
+
+            for (Employee employee : employees) {
+                if (employee != null) {
+                    double newSalary = employee.getSalary() * multiplier;
+                    employee.setSalary((int) newSalary);
+                }
+            }
+        }
     }
 
     @Override
