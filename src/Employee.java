@@ -1,16 +1,20 @@
 import java.util.List;
 public class Employee {
+
+    //public static Main SalaryUtils;
+    //начинаем генерировать с 1. Это поле общее (static) и принадлежит к классу Employee
     private static int idСounter = 1;
 
+    //поля принадлежать объекту, т.е. у каждого сотрудника значение данных будет своё
     private final int id;
     private final String fullName;
     public String setSalary;
     private int department;
     private int salary;
 
-
+    //конструктор  принимает нужные поля. Заполняем значениями из параметра конструктора
     public Employee(String fullName, int department, int salary) {
-        id = idСounter++;
+        id = idСounter++;  //будем брать из генератора и менять его при каждом вызове конструктора
         this.fullName = fullName;
         this.department = department;
         this.salary = salary;
@@ -41,13 +45,13 @@ public class Employee {
         return salary;
     }
 
-    public static class SalaryUtils {
-        /**
+   /* public static class SalaryUtils {
+        *//**
          * Статический метод для изменения зарплаты всех сотрудников на заданный процент
          *
-         * @param employees список сотрудников
-         * @param percent   процент изменения (может быть как положительным, так и отрицательным)
-         */
+         //* @param employees список сотрудников
+         //* @param percent   процент изменения (может быть как положительным, так и отрицательным)
+         *//*
         public static void adjustSalaries(List<Employee> employees, double percent) {
             if (employees == null) {
                 throw new IllegalArgumentException("Список сотрудников не может быть null");
@@ -62,7 +66,7 @@ public class Employee {
                 }
             }
         }
-    }
+    }*/
 
     @Override
     public String toString() {
