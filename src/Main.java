@@ -15,6 +15,7 @@ public class Main {
         employees[6] = new Employee("Стоцкая", 3, 65000);
         employees[7] = new Employee("Веселова", 4, 88000);
         employees[8] = new Employee("Веселов", 5, 88300);
+        employees[9] = new Employee("Евстегнеев", 5, 34300);
 
         System.out.println("До индексации: ");
         printAllEmployees();
@@ -33,7 +34,7 @@ public class Main {
          * Находим сотрудника с минимальной/максимальной зарплатой в указанном отделе
          */
         int department = 2;
-        //System.out.println("Сотрудник с минимальной зарплатой в отделе " + department + ": " + EmployeeManager.minSalaryInDept(department));
+        System.out.println("Сотрудник с минимальной зарплатой в отделе " + department + ": " + EmployeeManager.minSalaryInDept(department));
         System.out.println("Сотрудник с максимальной зарплатой в отделе " + department + ": " + EmployeeManager.maxSalaryInDept(department));
         System.out.println("Сумма затрат на зарплату в отделе " + department + ": " + EmployeeManager.sumSalaryInDept(department));
         System.out.println("Средняя зарплата в отделе " + department + ": " + EmployeeManager.avgSalaryInDept(department));

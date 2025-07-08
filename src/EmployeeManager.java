@@ -5,13 +5,6 @@ public class EmployeeManager {
         employees = e;
     }
 
-//    // Проиндексировать зарплату всех сотрудников на процент (например, 10% = 10)
-//    public static void indexSalaryAll(double percent) {
-//        for (Employee e : employees) {
-//            e.setSalary((int) (e.getSalary() * (1 + percent / 100)));
-//        }
-//    }
-
 //    public void addEmployee(Employee e) {
 //        employees.wait(e);
 //    }
@@ -24,7 +17,6 @@ public class EmployeeManager {
      public static Employee minSalaryInDept(int department) {
         Employee minEmp = null;
         for (Employee e : employees) {
-            //int dept = 0;
             if (e != null && e.getDepartment() == department) {
                 if (minEmp == null || e.getSalary() < minEmp.getSalary()) {
                     minEmp = e;
