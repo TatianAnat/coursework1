@@ -31,19 +31,22 @@ public class EmployeeBook {
         }
         return sum;
     }
+
     /**
      * Находим сотрудника с минимальной зарплатой
+     *
      * @return
      */
     public Employee findEmployeeWithMinSalary() {
         Employee minEmp = null;
         for (Employee e : employees) {
             if (e != null && (minEmp == null || e.getSalary() < minEmp.getSalary())) {
-                    minEmp = e;
-                }
+                minEmp = e;
             }
+        }
         return minEmp;
     }
+
     /**
      * Находим сотрудника с максимальной зарплатой
      */
@@ -51,9 +54,9 @@ public class EmployeeBook {
         Employee maxEmp = null;
         for (Employee e : employees) {
             if (e != null && (maxEmp == null || e.getSalary() > maxEmp.getSalary())) {
-                    maxEmp = e;
-                }
+                maxEmp = e;
             }
+        }
         return maxEmp;
     }
 
@@ -69,16 +72,9 @@ public class EmployeeBook {
         return count == 0 ? 0 : sum / count;
     }
 
-    public void  printAllEmployeeNames(){
-        for (Employee e : employees) {
-            if (e != null) {
-                System.out.println(e.getFullName());
-            }
-        }
-    }
-
     /**
      * индексация зарплаты всех сотрудников на указанный процент
+     *
      * @param percent
      */
     public void indexSalaries(double percent) {
@@ -88,6 +84,7 @@ public class EmployeeBook {
             }
         }
     }
+
     /**
      * Находим сотрудника с минимальной зарплатой в отделе
      *
@@ -105,6 +102,7 @@ public class EmployeeBook {
         }
         return minEmp;
     }
+
     /**
      * Находим сотрудника с максимальной зарплатой в отделе
      *
@@ -122,6 +120,7 @@ public class EmployeeBook {
         }
         return maxEmp;
     }
+
     /**
      * Сумма затрат на зарплату по отделу
      *
@@ -137,6 +136,7 @@ public class EmployeeBook {
         }
         return sum;
     }
+
     /**
      * Средняя зарплата по отделу
      *
@@ -154,6 +154,7 @@ public class EmployeeBook {
         }
         return count == 0 ? 0 : sum / count;
     }
+
     /**
      * Проиндексировать зарплату всех сотрудников отдела на процент
      *
@@ -166,6 +167,7 @@ public class EmployeeBook {
             }
         }
     }
+
     /**
      * печать всех сотрудников отдела (кроме отдела)
      */
@@ -177,6 +179,7 @@ public class EmployeeBook {
             }
         }
     }
+
     /**
      * Вывод всех сотрудников с зарплатой меньше заданного числа
      *
@@ -189,6 +192,7 @@ public class EmployeeBook {
             }
         }
     }
+
     /**
      * Вывод всех сотрудников с зарплатой больше или равной заданному числу
      *
@@ -204,6 +208,7 @@ public class EmployeeBook {
 
     /**
      * метод определяет есть ли свободная ячейка, чтобы добавить сотрудника
+     *
      * @param employee
      * @return возвращает истину, если свободная ячейка есть, иначе ложь
      */
@@ -211,13 +216,15 @@ public class EmployeeBook {
         for (int i = 0; i < employees.length; i++) {
             if (employees[i] == null) {
                 employees[i] = employee;
-                return  true;
+                return true;
             }
         }
-        return  false;
+        return false;
     }
+
     /**
      * метод удаляет сотрудника по id. Если сотрудник с указанным id будет найден, то
+     *
      * @return истина и ячейка обнуляется, иначе возвращается ложь, т.е. сотрудник не найден
      */
     public boolean removeEmployeeById(int id) {
@@ -228,5 +235,20 @@ public class EmployeeBook {
             }
         }
         return false;
+    }
+
+    /**
+     * метод поиска сотрудника по id
+     *
+     * @param id
+     * @return если сотрудник не найден, то возвращается null
+     */
+    public Employee getEmployeeById(int id) {
+        for (Employee e : employees) {
+            if (e != null && e.getId() == id) {
+                return e;
+            }
+        }
+        return null;
     }
 }
