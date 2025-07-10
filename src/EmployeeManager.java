@@ -1,20 +1,18 @@
 public class EmployeeManager {
     private static Employee[] employees;
 
+
     public static void setEmployees(Employee[] e) {
         employees = e;
     }
 
-//    public void addEmployee(Employee e) {
-//        employees.wait(e);
-//    }
-
     /**
      * Находим сотрудника с минимальной зарплатой в отделе
+     *
      * @param department
      * @return
      */
-     public static Employee minSalaryInDept(int department) {
+    public static Employee minSalaryInDept(int department) {
         Employee minEmp = null;
         for (Employee e : employees) {
             if (e != null && e.getDepartment() == department) {
@@ -28,6 +26,7 @@ public class EmployeeManager {
 
     /**
      * Находим сотрудника с максимальной зарплатой в отделе
+     *
      * @param department
      * @return
      */
@@ -45,10 +44,11 @@ public class EmployeeManager {
 
     /**
      * Сумма затрат на зарплату по отделу
+     *
      * @param department
      * @return
      */
-     public static double sumSalaryInDept(int department) {
+    public static double sumSalaryInDept(int department) {
         double sum = 0;
         for (Employee e : employees) {
             if (e != null && e.getDepartment() == department) {
@@ -61,10 +61,11 @@ public class EmployeeManager {
 
     /**
      * Средняя зарплата по отделу
+     *
      * @param department
      * @return
      */
-     public static double avgSalaryInDept(int department) {
+    public static double avgSalaryInDept(int department) {
         double sum = 0;
         int count = 0;
         for (Employee e : employees) {
@@ -78,6 +79,7 @@ public class EmployeeManager {
 
     /**
      * Проиндексировать зарплату всех сотрудников отдела на процент
+     *
      * @param percent
      */
     public static void indexSalaryInDept(int department, double percent) {
@@ -90,7 +92,7 @@ public class EmployeeManager {
 
     /**
      * печать всех сотрудников отдела (кроме отдела)
-      */
+     */
 
     public static void printEmployeesInDept(int department) {
         for (Employee e : employees) {
@@ -102,6 +104,7 @@ public class EmployeeManager {
 
     /**
      * Вывод всех сотрудников с зарплатой меньше заданного числа
+     *
      * @param salary
      */
     public static void printEmployeesWithSalaryLess(double salary) {
@@ -114,6 +117,7 @@ public class EmployeeManager {
 
     /**
      * Вывод всех сотрудников с зарплатой больше или равной заданному числу
+     *
      * @param salary
      */
     public static void printEmployeesWithSalaryGreaterOrEqual(double salary) {

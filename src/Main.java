@@ -2,27 +2,27 @@ import java.util.Random;
 
 public class Main {
     private static Employee[] employees = new Employee[10];
+
     public static void main(String[] args) {
 /**
  * заполняем массив
  */
-        employees[0] = new Employee("Иванов", 1, 50000);
-        employees[1] = new Employee("Петров", 1, 70000);
-        employees[2] = new Employee("Сидоров", 2, 60000);
-        employees[3] = new Employee("Кузнецов", 2, 80000);
-        employees[4] = new Employee("Суворов", 2, 45000);
-        employees[5] = new Employee("Евграфов", 3, 35000);
-        employees[6] = new Employee("Стоцкая", 3, 65000);
-        employees[7] = new Employee("Веселова", 4, 88000);
-        employees[8] = new Employee("Веселов", 5, 88300);
-        employees[9] = new Employee("Евстегнеев", 5, 34300);
+        employees[0] = new Employee("Иванов Иван Сергеевич", 1, 50000);
+        employees[1] = new Employee("Петров Пётр Михайлович", 1, 70000);
+        employees[2] = new Employee("Сидоров Юрий Константинович", 2, 60000);
+        employees[3] = new Employee("Кузнецов Роман Николаевич", 2, 80000);
+        employees[4] = new Employee("Суворов Олег Игоревич", 2, 45000);
+        employees[5] = new Employee("Евграфов Николай Захарович", 3, 35000);
+        employees[6] = new Employee("Стоцкая Алиса Сергеевна", 3, 65000);
+        employees[7] = new Employee("Веселова Александра Евгеньевна", 4, 88000);
+        employees[8] = new Employee("Веселов Андрей Анатольевич", 5, 88300);
+        employees[9] = new Employee("Евстегнеев Егор Алексеевич", 5, 34300);
+
+        EmployeeManager.setEmployees(employees);
 
         System.out.println("До индексации: ");
         printAllEmployees();
-        //System.out.println("Сотрудник с минимальной зарплатой: " + EmployeeManager.minSalaryInDept(1));
-       // System.out.println("Сотрудник с максимальной зарплатой: " + EmployeeManager.maxSalaryInDept(1).getId());
-        //System.out.println("Сумма затрат на зарплату по отделу 1: " + EmployeeManager.sumSalaryInDept(1));
-        //System.out.println("Средняя зарплата по отделу 2: " + EmployeeManager.avgSalaryInDept(2));
+
         System.out.println("Сумма затрат на зарплату: " + calculateTotalSalary());
         System.out.println("Средняя зарплата: " + calculateAverageSalary());
 
@@ -78,6 +78,7 @@ public class Main {
         }
         return sum;
     }
+
     public static double calculateAverageSalary() {
         double sum = 0;
         int count = 0;
