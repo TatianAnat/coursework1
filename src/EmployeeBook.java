@@ -201,4 +201,32 @@ public class EmployeeBook {
             }
         }
     }
+
+    /**
+     * метод определяет есть ли свободная ячейка, чтобы добавить сотрудника
+     * @param employee
+     * @return возвращает истину, если свободная ячейка есть, иначе ложь
+     */
+    public boolean addEmployee(Employee employee) {
+        for (int i = 0; i < employees.length; i++) {
+            if (employees[i] == null) {
+                employees[i] = employee;
+                return  true;
+            }
+        }
+        return  false;
+    }
+    /**
+     * метод удаляет сотрудника по id. Если сотрудник с указанным id будет найден, то
+     * @return истина и ячейка обнуляется, иначе возвращается ложь, т.е. сотрудник не найден
+     */
+    public boolean removeEmployeeById(int id) {
+        for (int i = 0; i < employees.length; i++) {
+            if (employees[i] != null && employees[i].getId() == id) {
+                employees[i] = null;
+                return true;
+            }
+        }
+        return false;
+    }
 }

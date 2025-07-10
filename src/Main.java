@@ -3,6 +3,8 @@ import java.util.Random;
 public class Main {
     public static void main(String[] args) {
         EmployeeBook book = new EmployeeBook(10);
+
+
 /**
  * заполняем массив
  */
@@ -15,14 +17,21 @@ public class Main {
         book.addEmployee(new Employee("Стоцкая Алиса Сергеевна", 3, 65000),6);
         book.addEmployee(new Employee("Веселова Александра Евгеньевна", 4, 88000),7);
         book.addEmployee(new Employee("Веселов Андрей Анатольевич", 5, 88300),8);
-        book.addEmployee(new Employee("Евстегнеев Егор Алексеевич", 5, 34300),9);
 
+        Employee newEmp = new Employee("Сергина Анна Михайловна",2,67000);
+        boolean added = book.addEmployee(newEmp);
+        System.out.println("Сотрудник добавлен: " + added);
+
+        boolean removed = book.removeEmployeeById(newEmp.getId());
+        System.out.println("Сотрудник удалён: " + removed);
+        System.out.println();
         System.out.println("До индексации: ");
         book.printAllEmployees();
 
         System.out.println("Сумма затрат на зарплату: " + book.calculateTotalSalary());
         System.out.println("Средняя зарплата: " + book.calculateAverageSalary());
 
+        System.out.println();
         System.out.println("Индексация зарплаты на 10%");
         book.indexSalaries(10);
         book.printAllEmployees();
